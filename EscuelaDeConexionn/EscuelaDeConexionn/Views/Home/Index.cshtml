@@ -1,0 +1,49 @@
+﻿@model List<EscuelaDeConexionn.Models.Courses>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div="row" id="tabladecursos"> 
+    <div class="container">
+
+        <table class="table table-hover">
+            <thead>
+            <th>
+                Course Id
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                credits
+            </th>
+
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model) {
+                <tr>
+                    <td>@item.CouserId</td>
+                    <td>@item.Credits</td>
+                    <td>@item.Title</td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+         
+    </div>
+
+ </div>
+@section Scripts{
+    
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var tablacurso = $('#tabladecursos').DataTable();
+        }
+        );
+        </script> 
+
+    }
